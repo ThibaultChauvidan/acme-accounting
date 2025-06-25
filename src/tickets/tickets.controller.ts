@@ -48,6 +48,8 @@ export class TicketsController {
       order: [['createdAt', 'DESC']],
     });
 
+    const duplicates = await Ticket.findAll({ where: { companyId, type } });
+
     if (!assignees.length)
       throw new ConflictException(
         `Cannot find user with role ${userRole} to create a ticket`,
@@ -56,6 +58,11 @@ export class TicketsController {
     if (userRole === UserRole.corporateSecretary && assignees.length > 1)
       throw new ConflictException(
         `Multiple users with role ${userRole}. Cannot create a ticket`,
+      );
+
+    if (type === TicketType.registrationAddressChange && duplicates.length)
+      throw new ConflictException(
+        `There already a tickets with type registrationAddressChange. Cannot create a ticket`
       );
 
     const assignee = assignees[0];

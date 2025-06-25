@@ -146,6 +146,31 @@ describe('TicketsController', () => {
           ),
         );
       });
+
+      it('if there already a ticket, throw', async () => {
+        const company = await Company.create({ name: 'test' });
+        const user = await User.create({
+          name: 'Test User',
+          role: UserRole.corporateSecretary,
+          companyId: company.id,
+        });
+
+        await controller.create({
+          companyId: company.id,
+          type: TicketType.registrationAddressChange,
+        });
+
+        await expect(
+          controller.create({
+            companyId: company.id,
+            type: TicketType.registrationAddressChange,
+          }),
+        ).rejects.toEqual(
+          new ConflictException(
+            `There already a tickets with type registrationAddressChange. Cannot create a ticket`,
+          ),
+        );
+      });
     });
   });
 });
