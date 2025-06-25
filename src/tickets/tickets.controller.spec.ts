@@ -2,6 +2,7 @@ import { ConflictException } from '@nestjs/common';
 import { Test, TestingModule } from '@nestjs/testing';
 import { Company } from '../../db/models/Company';
 import {
+  Ticket,
   TicketCategory,
   TicketStatus,
   TicketType,
@@ -9,6 +10,7 @@ import {
 import { User, UserRole } from '../../db/models/User';
 import { DbModule } from '../db.module';
 import { TicketsController } from './tickets.controller';
+import { TicketService } from './tickets.service';
 
 describe('TicketsController', () => {
   let controller: TicketsController;
@@ -16,6 +18,7 @@ describe('TicketsController', () => {
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       controllers: [TicketsController],
+      providers: [TicketService],
       imports: [DbModule],
     }).compile();
 
@@ -248,6 +251,75 @@ describe('TicketsController', () => {
             `Multiple users with role corporateSecretary. Cannot create a ticket`,
           ),
         );
+      });
+
+    });
+
+    describe('strikeOff', () => {
+      it('creates strikeOff ticket', async () => {
+        const company = await Company.create({ name: 'test' });
+        const user = await User.create({
+          name: 'Test User',
+          role: UserRole.director,
+          companyId: company.id,
+        });
+
+        const ticket = await controller.create({
+          companyId: company.id,
+          type: TicketType.strikeOff,
+        });
+
+        expect(ticket.category).toBe(TicketCategory.management);
+        expect(ticket.assigneeId).toBe(user.id);
+        expect(ticket.status).toBe(TicketStatus.open);
+      });
+
+      it('if there are multiple director, throw', async() => {
+        const company = await Company.create({ name: 'test' });
+        await User.create({
+          name: 'Test User',
+          role: UserRole.director,
+          companyId: company.id,
+        });
+        await User.create({
+          name: 'Test User',
+          role: UserRole.director,
+          companyId: company.id,
+        });
+
+        await expect(
+          controller.create({
+            companyId: company.id,
+            type: TicketType.strikeOff,
+          }),
+        ).rejects.toEqual(
+          new ConflictException(
+            `Multiple users with role director. Cannot create a ticket`,
+          ),
+        );
+      });
+
+      it('if there is open tickets, close them', async() => {
+        const company = await Company.create({ name: 'test' });
+        const user = await User.create({
+          name: 'Test User',
+          role: UserRole.director,
+          companyId: company.id,
+        });
+
+        const ticket = await Ticket.create({
+          companyId: company.id,
+          status:TicketStatus.open,
+        })
+
+        await controller.create({
+          companyId: company.id,
+          type: TicketType.strikeOff,
+        });
+
+        const updatedTicket = await Ticket.findOne({where:{id:ticket.id}});
+
+        expect(updatedTicket?.status).toBe(TicketStatus.resolved)
       });
     });
   });
