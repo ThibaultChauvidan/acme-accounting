@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Logger } from '@nestjs/common';
 import fs from 'fs';
 import path from 'path';
 import { performance } from 'perf_hooks';
@@ -10,13 +10,35 @@ export class ReportsService {
     yearly: 'idle',
     fs: 'idle',
   };
+  private logger = new Logger(ReportsService.name)
 
   state(scope: string) {
     return this.states[scope];
   }
 
+  private log(scope: string) {
+    this.logger.log(`${scope} ${this.state(scope)}`)
+  }
+
+  generateAsyncReport(scope: string) {
+    if (this.state(scope) === 'starting') return;
+    switch (scope) {
+      case 'accounts':
+        return this.toAsyncReport(this.accounts)
+      case 'yearly':
+        return this.toAsyncReport(this.yearly)
+      case 'fs':
+        return this.toAsyncReport(this.fs)
+    }
+  }
+  private toAsyncReport(reportFunction: () => void) {
+    const self = this;
+    setImmediate(reportFunction.bind(self))
+  }
+
   accounts() {
     this.states.accounts = 'starting';
+    this.log('accounts')
     const start = performance.now();
     const tmpDir = 'tmp';
     const outputFile = 'out/accounts.csv';
@@ -43,10 +65,12 @@ export class ReportsService {
     }
     fs.writeFileSync(outputFile, output.join('\n'));
     this.states.accounts = `finished in ${((performance.now() - start) / 1000).toFixed(2)}`;
+    this.log('accounts')
   }
 
   yearly() {
     this.states.yearly = 'starting';
+    this.log('yearly')
     const start = performance.now();
     const tmpDir = 'tmp';
     const outputFile = 'out/yearly.csv';
@@ -78,10 +102,12 @@ export class ReportsService {
       });
     fs.writeFileSync(outputFile, output.join('\n'));
     this.states.yearly = `finished in ${((performance.now() - start) / 1000).toFixed(2)}`;
+    this.log('yearly')
   }
 
   fs() {
     this.states.fs = 'starting';
+    this.log('fs')
     const start = performance.now();
     const tmpDir = 'tmp';
     const outputFile = 'out/fs.csv';
@@ -197,5 +223,6 @@ export class ReportsService {
     );
     fs.writeFileSync(outputFile, output.join('\n'));
     this.states.fs = `finished in ${((performance.now() - start) / 1000).toFixed(2)}`;
+    this.log('fs')
   }
 }
