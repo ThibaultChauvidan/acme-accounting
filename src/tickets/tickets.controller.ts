@@ -43,29 +43,24 @@ export class TicketsController {
         ? UserRole.accountant
         : UserRole.corporateSecretary;
 
-    const assignees = await User.findAll({
-      where: { companyId, role: userRole },
-      order: [['createdAt', 'DESC']],
-    });
+    const {assignee, multiple} = await getAssignee(companyId, userRole);
 
     const duplicates = await Ticket.findAll({ where: { companyId, type } });
 
-    if (!assignees.length)
+    if (assignee === null)
       throw new ConflictException(
         `Cannot find user with role ${userRole} to create a ticket`,
       );
 
-    if (userRole === UserRole.corporateSecretary && assignees.length > 1)
+    if (userRole === UserRole.corporateSecretary && multiple)
       throw new ConflictException(
-        `Multiple users with role ${userRole}. Cannot create a ticket`,
+        `Multiple users with role ${assignee.role}. Cannot create a ticket`,
       );
 
     if (type === TicketType.registrationAddressChange && duplicates.length)
       throw new ConflictException(
         `There already a tickets with type registrationAddressChange. Cannot create a ticket`
       );
-
-    const assignee = assignees[0];
 
     const ticket = await Ticket.create({
       companyId,
@@ -86,4 +81,24 @@ export class TicketsController {
 
     return ticketDto;
   }
+}
+
+async function getAssignee(companyId: number, userRole: UserRole): Promise<{assignee:User|null,multiple:boolean}> {
+  const roleCondition = userRole === UserRole.corporateSecretary ? [userRole, UserRole.director] : userRole;
+  const users = await User.findAll({
+      where: { companyId, role: roleCondition },
+      order: [
+        ['role', 'ASC'],        // Alphabetical: 'corporateSecretary' < 'director'
+        ['createdAt', 'DESC']
+      ],
+      limit:2, // No need to query more than 2 to check on duplicates
+    });
+    if (!users.length) return {assignee:null,multiple:false}
+    
+    let multiple = users.length > 1;
+    if (userRole === UserRole.corporateSecretary) {
+      multiple = users.filter(u => u.role === UserRole.corporateSecretary).length > 1 || users.filter(u => u.role === UserRole.director).length > 1;
+    }
+
+    return {assignee:users[0],multiple: users.length > 1}
 }
