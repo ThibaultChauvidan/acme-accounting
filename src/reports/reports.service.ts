@@ -12,7 +12,10 @@ export class ReportsService {
     yearly: 'idle',
     fs: 'idle',
   };
-  // private logger = new Logger(ReportsService.name)
+
+  private jobQueue: Array<() => Promise<void>> = [];
+  private activeJob: boolean = false;
+
   constructor(
     @Inject(WINSTON_MODULE_NEST_PROVIDER)
     private readonly logger: Logger,
@@ -26,15 +29,36 @@ export class ReportsService {
     this.logger.log({level:'info', message:`${scope} ${this.state(scope)}`})
   }
 
+  private async runNextJob() {
+    if (this.activeJob || this.jobQueue.length === 0) return;
+
+    this.activeJob = true;
+    const job = this.jobQueue.shift();
+
+    try {
+      await job?.();
+    } catch (err) {
+      console.error('Report job failed:', err);
+    }
+
+    this.activeJob = false;
+    this.runNextJob(); // run next job if any
+  }
+
+  private enqueue(job: () => Promise<void>) {
+    this.jobQueue.push(job);
+    this.runNextJob(); // try starting immediately if idle
+  }
+
   generateAsyncReport(scope: string) {
     if (this.state(scope) === 'starting') return;
     switch (scope) {
       case 'accounts':
-        return this.accounts();
+        return this.enqueue(this.accounts.bind(this));
       case 'yearly':
-        return this.yearly();
+        return this.enqueue(this.yearly.bind(this));
       case 'fs':
-        return this.fs();
+        return this.enqueue(this.fs.bind(this));
     }
   }
 
