@@ -1,4 +1,6 @@
-import { Injectable, Logger } from '@nestjs/common';
+import { Injectable, Inject } from '@nestjs/common';
+import { WINSTON_MODULE_NEST_PROVIDER } from 'nest-winston';
+import { Logger } from 'winston';
 import fs from 'fs';
 import path from 'path';
 import { performance } from 'perf_hooks';
@@ -10,14 +12,18 @@ export class ReportsService {
     yearly: 'idle',
     fs: 'idle',
   };
-  private logger = new Logger(ReportsService.name)
+  // private logger = new Logger(ReportsService.name)
+  constructor(
+    @Inject(WINSTON_MODULE_NEST_PROVIDER)
+    private readonly logger: Logger,
+  ) {}
 
   state(scope: string) {
     return this.states[scope];
   }
 
   private log(scope: string) {
-    this.logger.log(`${scope} ${this.state(scope)}`)
+    this.logger.log({level:'info', message:`${scope} ${this.state(scope)}`})
   }
 
   generateAsyncReport(scope: string) {
