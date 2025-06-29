@@ -199,7 +199,7 @@ export class ReportsService {
       let buffer = ''
       stream.on('data', (chunk:Buffer) => {
         buffer += chunk.toString('ascii');
-        const lines = buffer.trim().split('\n')
+        const lines = buffer.split('\n')
         for (const line of lines.slice(0,-1)) {
           parseLineMethod(line, accountBalances);
         }
@@ -217,14 +217,14 @@ export class ReportsService {
   }
 
   private static parseAcountLine(line: string, accountBalances:Map<string, number>) {
-    const [, account, , debit, credit] = line.split(',');
+    const [, account, , debit, credit] = line.trim().split(',');
     if (!account) return;
     accountBalances[account] = (accountBalances[account] || 0) +
       parseFloat(String(debit || 0)) - parseFloat(String(credit || 0));
   }
 
   private static parseYearlyLine(line: string, records:Map<string, number>) {
-    const [date, account, , debit, credit] = line.split(',');
+    const [date, account, , debit, credit] = line.trim().split(',');
     if (account !== 'Cash') return
     const year = new Date(date).getFullYear();
     records[year] = (records[year] || 0) +
