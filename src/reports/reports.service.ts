@@ -15,6 +15,7 @@ export class ReportsService {
 
   private jobQueue: Array<() => Promise<void>> = [];
   private activeJob: boolean = false;
+  private readonly workerUrl = process.env.WORKER_URL || 'http://localhost:8080';
 
   constructor(
     @Inject(WINSTON_MODULE_NEST_PROVIDER)
@@ -60,6 +61,38 @@ export class ReportsService {
       case 'fs':
         return this.enqueue(this.fs.bind(this));
     }
+  }
+
+  async generateReportFromWorker(scope: string) {
+    if (this.state(scope) === 'starting') return;
+    
+    const reportType = scope;
+    const inputFolder = "./tmp";
+    const outputPath = `./out/${scope}_go.csv`;
+
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 seconds timeout
+    const response = await fetch(`${this.workerUrl}/build-report`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          reportType,
+          inputFolder,
+          outputPath
+        }),
+        signal: controller.signal
+      });
+    clearTimeout(timeoutId);
+    if (!response.ok) {
+      return; //TODO capture error
+    }
+
+    const data = await response.json();
+    const workerTime = data.duration
+    this.states[scope] = `finished in ${(workerTime / 1000).toFixed(2)}`;
+
   }
 
   async accounts() {

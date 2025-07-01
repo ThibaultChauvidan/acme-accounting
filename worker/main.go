@@ -3,111 +3,158 @@ package main
 import (
 	"bufio"
 	"encoding/csv"
+	"encoding/json"
 	"fmt"
 	"io/fs"
 	"log"
+	"net/http"
 	"os"
 	"path/filepath"
-	"runtime/pprof"
 	"strconv"
 	"strings"
 	"sync"
 	"time"
 )
 
-func main() {
-	reportType := os.Args[1]
-	inputFolder := os.Args[2]
-	outputPath := os.Args[3]
+// func main() {
+// 	reportType := os.Args[1]
+// 	inputFolder := os.Args[2]
+// 	outputPath := os.Args[3]
 
-	f, err := os.Create("cpu.prof")
-	if err != nil {
-		log.Fatal(err)
+// 	f, err := os.Create("cpu.prof")
+// 	if err != nil {
+// 		log.Fatal(err)
+// 	}
+// 	pprof.StartCPUProfile(f)
+// 	defer pprof.StopCPUProfile()
+
+// 	start := time.Now()
+// 	switch strings.ToLower(reportType) {
+// 	case "accounts":
+// 		buildAccountReports(inputFolder, outputPath)
+// 	case "yearly":
+// 		buildYearlyReports(inputFolder, outputPath)
+// 	case "fs":
+// 		buildFSReports(inputFolder,outputPath)
+// 	}
+// 	duration := time.Since(start)
+// 	fmt.Printf("Program finished in %dms\n", duration.Milliseconds())
+// }
+
+// Server
+
+// ReportRequest represents the expected query parameters for building a report
+type ReportRequest struct {
+	ReportType  string `json:"reportType"`
+	InputFolder string `json:"inputFolder"`
+	OutputPath  string `json:"outputPath"`
+}
+
+// buildReportHandler handles the /build-report endpoint
+func buildReportHandler(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodPost {
+		http.Error(w, "Only POST method is allowed", http.StatusMethodNotAllowed)
+		return
 	}
-	pprof.StartCPUProfile(f)
-	defer pprof.StopCPUProfile()
+
+	var req ReportRequest
+	decoder := json.NewDecoder(r.Body)
+	if err := decoder.Decode(&req); err != nil {
+		http.Error(w, "Invalid JSON body", http.StatusBadRequest)
+		return
+	}
+
+	reportType := req.ReportType
+	inputFolder := req.InputFolder
+	outputPath := req.OutputPath
+
+	if reportType == "" || inputFolder == "" || outputPath == "" {
+		http.Error(w, "Missing required fields: reportType, inputFolder, outputPath", http.StatusBadRequest)
+		return
+	}
 
 	start := time.Now()
+	var result string
+
 	switch strings.ToLower(reportType) {
 	case "accounts":
 		buildAccountReports(inputFolder, outputPath)
+		result = "Account report generated"
+	case "yearly":
+		buildYearlyReports(inputFolder, outputPath)
+		result = "Yearly report generated"
+	case "fs":
+		buildFSReports(inputFolder, outputPath)
+		result = "FS report generated"
 	default:
-		lookUpAccount(inputFolder, outputPath)
+		http.Error(w, "Unknown reportType", http.StatusBadRequest)
+		return
 	}
+
 	duration := time.Since(start)
-	fmt.Printf("Program finished in %dms\n", duration.Milliseconds())
+	resp := map[string]interface{}{
+		"message":  result,
+		"duration": duration.Milliseconds(),
+	}
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(resp)
+}
+
+func main() {
+	http.HandleFunc("/build-report", buildReportHandler)
+	fmt.Println("Server started at :8080")
+	log.Fatal(http.ListenAndServe(":8080", nil))
 }
 
 // Report Function
-func lookUpAccount(in, out string) {
-	// records := &sync.Map{}
-	records := map[string][][]float64{}
-	mtx := &sync.Mutex{}
-	readFiles(in, func(s string) {
-		fields := strings.Split(strings.TrimSpace(s), ",")
-		if len(fields) < 5 {
-			return // avoid out-of-bounds
-		}
-		account := fields[1]
-		debit := convToFloat64(fields[3])
-		credit := convToFloat64(fields[4])
-
-		delta := debit - credit
-		mtx.Lock()
-		defer mtx.Unlock()
-		if _, ok := records[account]; !ok {
-			records[account] = [][]float64{}
-		}
-		records[account] = append(records[account], []float64{debit, credit, delta})
-	})
-
-	//Print a table of results for one account with each live be debit, credit, delta and last line would be the sum of each
-	for account, values := range records {
-		var sum1 , sum2, sum3 float64
-		for _, val := range values {
-			sum1 += val[0];
-			sum2 += val[1];
-			sum3 += val[2];
-			fmt.Printf("|%-25s|%-25v|%-25v|%-25v|\n", account, val[0], val[1], val[2])
-		}
-		fmt.Printf("|%-25s|%-25v|%-25v|%-25v|\n", account, sum1, sum2, sum3)
-		break;
-	}
-}
 func buildAccountReports(in, out string) {
-	// records := &sync.Map{}
-	records := map[string]float64{}
-	mtx := &sync.Mutex{}
+	records := &sync.Map{}
 	readFiles(
 		in,
 		func(s string) {
 			fields := strings.Split(s, ",")
-			// fmt.Println(fields)
 			if len(fields) < 5 {
 				return // avoid out-of-bounds
 			}
 			account := fields[1]
 			debit := convToFloat64(fields[3])
 			credit := convToFloat64(fields[4])
-			// log each field in a 10 span space
-			// fmt.Printf("|%-20s|%-20s|%-20s|%-20s|%-20s|\n", fields[0], account, fields[2], fields[3], fields[4])
-			// fmt.Printf("|%-20s|%-20s|%-20s|%-20v|%-20v|\n", fields[0], account, fields[2], debit, credit)
-
 
 			delta := debit - credit
-			mtx.Lock()
-			defer mtx.Unlock()
-			if _, ok := records[account]; !ok {
-				records[account] = 0.0
-			}
-			records[account] += delta
+			current, _ := records.LoadOrStore(account,0.0)
+			records.Store(account, current.(float64) + delta)
 		},
 	)
 	writeCSV(out, records)
 }
 func buildYearlyReports(in, out string) {
+	records := &sync.Map{}
+	readFiles(
+		in,
+		func(s string) {
+			fields := strings.Split(s, ",")
+			if len(fields) < 5 {
+				return // avoid out-of-bounds
+			}
+			sDate := fields[0]
+			account := fields[1]
+			if account != "Cash" {return;}
 
+			// get year from string date
+			date, _ := time.Parse("2019-12-31", sDate)
+			year := date.Year()
+
+			debit := convToFloat64(fields[3])
+			credit := convToFloat64(fields[4])
+
+			delta := debit - credit
+			current, _ := records.LoadOrStore(year,0.0)
+			records.Store(year, current.(float64) + delta)
+		},
+	)
+	writeCSV(out, records)
 }
+
 func buildFSReports(in, out string) {}
 
 //Files Functions
@@ -120,18 +167,14 @@ func readFiles(folderPath string, processline func(string)) {
 	//Read all files in the folder and process them concurrently
 	var wg sync.WaitGroup
 
-	// count := 0
 	err := filepath.Walk(folderPath, func(path string, info os.FileInfo, err error) error {
-		// fmt.Printf("%d Processing file: %s with %v \n", count, path, isCSVFile(info))
-		// if count > 3 {return nil;} 
-		// count++
 		if err != nil {
 			log.Println(err)
 			return err
 		}
 		if isCSVFile(info) {
 			wg.Add(1)
-			func(path string) {
+			go func(path string) {
 				defer wg.Done()
 				readCsv(path, processline)
 			}(path)
@@ -168,7 +211,7 @@ func readCsv(filePath string, processLine func(string)) {
 	}
 }
 
-func writeCSV(path string, records map[string]float64) error {
+func writeCSV(path string, records *sync.Map) error {
 	f, err := os.Create(path)
 	if err != nil {
 		return err
@@ -182,38 +225,26 @@ func writeCSV(path string, records map[string]float64) error {
 	if err := writer.Write([]string{"Account", "Balance"}); err != nil {
 		return err
 	}
-	fmt.Println(records)
-	for account, balance := range records {
-		fmt.Printf("|%-25s|%-25v|%-25s|\n",account, balance, strconv.FormatFloat(balance, 'f', 2, 64))
-		err = writer.Write([]string{account, strconv.FormatFloat(balance, 'f', 2, 64)})
-		if err != nil {
-			fmt.Println(err)
+	records.Range(func(key, value interface{}) bool {
+		account, ok1 := key.(string)
+		balance, ok2 := value.(float64)
+		if ok1 && ok2 {
+			if err := writer.Write([]string{
+				account,
+				strconv.FormatFloat(balance, 'f', 2, 64),
+			}); err != nil {
+				return false
+			}
 		}
-	}
-	// records.Range(func(key, value interface{}) bool {
-	// 	account, ok1 := key.(string)
-	// 	balance, ok2 := value.(float64)
-	// 	fmt.Println(account, ok1)
-	// 	fmt.Println(balance, ok2)
-	// 	if ok1 && ok2 {
-	// 		if err := writer.Write([]string{
-	// 			account,
-	// 			strconv.FormatFloat(balance, 'f', 2, 64),
-	// 		}); err != nil {
-	// 			return false
-	// 		}
-	// 	}
-	// 	return true
-	// })
+		return true
+	})
 	return nil
 }
 
 func convToFloat64(s string) float64 {
-	// if s == "" {return 0;}
+	if s == "" {return 0}
 	value, err := strconv.ParseFloat(s, 64)
 	if err != nil {
-
-		// fmt.Printf("cannot convert %s \n", s)
 		return 0
 	}
 	return value
