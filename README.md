@@ -1,3 +1,38 @@
+## 🧾 Disclosure
+
+This project was developed with the support of AI tools to enhance productivity, decision-making, and performance.
+
+### 🧠 Local AI Assistant (`Continue` in VS Code)
+A self-hosted local AI agent powered by [`Continue`](https://continue.dev/), using the following models:
+
+- **Llama 3.1 8B** via Ollama — for code editing, pattern refactoring, and reasoning about functions
+- **Qwen2.5-Coder 1.5B** — for autocomplete of TypeScript/NodeJS constructs during development
+- **Nomic Embed** — for contextual embedding of the codebase and documentation to support local analysis
+
+**Used for:**
+- On-the-fly code generation and completion
+- Testing local agent capability but performed too poorly for file generation and analysis
+
+### 🤖 ChatGPT (OpenAI)
+
+ChatGPT was used for real-time architectural planning, performance analysis, and system design iteration.
+
+**Used for:**
+- 🧱 **Architecture Planning**:  
+  - Discovery and Designing in NestJS  
+  - Structuring service logic to separate responsibilities cleanly
+  - Reviewing controller/service patterns for testability  
+  - Refining logging strategies using Winston with NestJS-compatible formats
+
+- 🚀 **Performance Optimization Brainstorming**:  
+  - Exploring streaming CSV file reads using raw `Buffer` for maximum throughput  
+  - Comparing `fast-csv`, `readline`, and raw stream approaches  
+  - Analyzing when to buffer, split, decode, and write data  
+  - Strategizing large-scale sequential vs. concurrent processing (e.g., `Promise.allSettled`, I/O throttling)  
+
+
+---
+
 # ACME ACCOUNTING
 
 Welcome to ACME acounting, this codebase serves as a way for you to

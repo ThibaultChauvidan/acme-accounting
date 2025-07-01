@@ -7,6 +7,7 @@ import {
   TicketType,
 } from '../../db/models/Ticket';
 import { User, UserRole } from '../../db/models/User';
+import { TicketService } from './tickets.service';
 
 interface newTicketDto {
   type: TicketType;
@@ -24,6 +25,7 @@ interface TicketDto {
 
 @Controller('api/v1/tickets')
 export class TicketsController {
+  constructor(private ticketService: TicketService) {}
   @Get()
   async findAll() {
     return await Ticket.findAll({ include: [Company, User] });
@@ -33,34 +35,29 @@ export class TicketsController {
   async create(@Body() newTicketDto: newTicketDto) {
     const { type, companyId } = newTicketDto;
 
-    const category =
-      type === TicketType.managementReport
-        ? TicketCategory.accounting
-        : TicketCategory.corporate;
+    const category = getCategory(type);
+    const userRole = getUserRole(type);
 
-    const userRole =
-      type === TicketType.managementReport
-        ? UserRole.accountant
-        : UserRole.corporateSecretary;
+    const {assignee, multiple} = await getAssignee(companyId, userRole);
 
-    const assignees = await User.findAll({
-      where: { companyId, role: userRole },
-      order: [['createdAt', 'DESC']],
-    });
+    const duplicates = await Ticket.findAll({ where: { companyId, type } });
 
-    if (!assignees.length)
+    if (assignee === null)
       throw new ConflictException(
         `Cannot find user with role ${userRole} to create a ticket`,
       );
 
-    if (userRole === UserRole.corporateSecretary && assignees.length > 1)
+    if ([UserRole.corporateSecretary, UserRole.director].includes(assignee.role) && multiple)
       throw new ConflictException(
-        `Multiple users with role ${userRole}. Cannot create a ticket`,
+        `Multiple users with role ${assignee.role}. Cannot create a ticket`,
       );
 
-    const assignee = assignees[0];
+    if (type === TicketType.registrationAddressChange && duplicates.length)
+      throw new ConflictException(
+        `There already a tickets with type registrationAddressChange. Cannot create a ticket`
+      );
 
-    const ticket = await Ticket.create({
+    const ticket = await this.ticketService.createTicket({
       companyId,
       assigneeId: assignee.id,
       category,
@@ -79,4 +76,43 @@ export class TicketsController {
 
     return ticketDto;
   }
+}
+
+function getCategory(type: TicketType): TicketCategory {
+  switch (type) {
+    case TicketType.managementReport:
+      return TicketCategory.accounting;
+    case TicketType.strikeOff:
+      return TicketCategory.management;
+    default:
+      return TicketCategory.corporate;
+  }
+}
+
+function getUserRole(type: TicketType): UserRole {
+  switch (type) {
+    case TicketType.managementReport:
+      return UserRole.accountant;
+    case TicketType.strikeOff:
+      return UserRole.director;
+    default:
+      return UserRole.corporateSecretary;
+  }
+}
+
+async function getAssignee(companyId: number, userRole: UserRole): Promise<{assignee:User|null,multiple:boolean}> {
+  const roleCondition = userRole === UserRole.corporateSecretary ? [userRole, UserRole.director] : userRole;
+  const users = await User.findAll({
+      where: { companyId, role: roleCondition },
+      order: [
+        ['role', 'ASC'],        // Alphabetical: 'corporateSecretary' < 'director'
+        ['createdAt', 'DESC']
+      ],
+      limit: 2, // For now, no need to query more than 2 to check on duplicates
+    });
+    if (!users.length) return {assignee:null,multiple:false}
+    const assignee = users[0]
+    const multiple = users[1]?.role === assignee.role; //check if there is a second valid assignee with the correct role
+
+    return {assignee:users[0],multiple}
 }

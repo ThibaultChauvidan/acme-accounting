@@ -23,10 +23,12 @@
     "@nestjs/core": "11.0.13",
     "@nestjs/platform-express": "11.0.13",
     "@nestjs/sequelize": "11.0.0",
+    "nest-winston": "^1.10.2",
     "pg": "8.14.1",
     "reflect-metadata": "0.2.2",
     "sequelize": "6.37.7",
-    "sequelize-typescript": "2.1.6"
+    "sequelize-typescript": "2.1.6",
+    "winston": "^3.17.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "3.3.1",
