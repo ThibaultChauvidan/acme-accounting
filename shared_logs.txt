@@ -1,0 +1,466 @@
+[2025-06-26T02:55:00.628Z] INFO: accounts starting
+[2025-06-26T02:56:36.376Z] INFO: accounts starting
+[2025-06-26T02:57:04.046Z] INFO: accounts starting
+[2025-06-26T02:58:43.062Z] INFO: accounts starting
+[2025-06-26T02:58:46.242Z] INFO: accounts finished in 3.18
+[2025-06-26T02:58:46.244Z] INFO: yearly starting
+[2025-06-26T02:58:47.060Z] INFO: yearly finished in 0.82
+[2025-06-26T02:58:47.062Z] INFO: fs starting
+[2025-06-26T02:58:48.247Z] INFO: fs finished in 1.18
+[2025-06-26T02:59:05.183Z] INFO: accounts starting
+[2025-06-26T02:59:06.334Z] INFO: accounts finished in 1.15
+[2025-06-26T02:59:06.336Z] INFO: yearly starting
+[2025-06-26T02:59:07.169Z] INFO: yearly finished in 0.83
+[2025-06-26T02:59:07.171Z] INFO: fs starting
+[2025-06-26T02:59:08.321Z] INFO: fs finished in 1.15
+[2025-06-26T03:03:13.569Z] INFO: accounts starting
+[2025-06-26T03:03:17.017Z] INFO: accounts finished in 3.45
+[2025-06-26T03:03:17.018Z] INFO: yearly starting
+[2025-06-26T03:03:17.824Z] INFO: yearly finished in 0.81
+[2025-06-26T03:03:17.825Z] INFO: fs starting
+[2025-06-26T03:03:19.052Z] INFO: fs finished in 1.23
+[2025-06-26T03:51:56.461Z] INFO: accounts starting
+[2025-06-26T03:51:58.902Z] INFO: accounts finished in 2.44
+[2025-06-26T03:51:58.903Z] INFO: yearly starting
+[2025-06-26T03:51:59.717Z] INFO: yearly finished in 0.81
+[2025-06-26T03:51:59.718Z] INFO: fs starting
+[2025-06-26T03:52:00.894Z] INFO: fs finished in 1.18
+[2025-06-26T03:52:16.144Z] INFO: accounts starting v2
+[2025-06-26T03:52:20.136Z] INFO: accounts finished in 3.99
+[2025-06-26T03:52:20.138Z] INFO: yearly starting
+[2025-06-26T03:52:20.961Z] INFO: yearly finished in 0.82
+[2025-06-26T03:52:20.962Z] INFO: fs starting
+[2025-06-26T03:52:22.157Z] INFO: fs finished in 1.19
+[2025-06-26T03:52:36.245Z] INFO: accounts starting v2
+[2025-06-26T03:52:38.641Z] INFO: accounts finished in 2.40
+[2025-06-26T03:52:38.642Z] INFO: yearly starting
+[2025-06-26T03:52:39.508Z] INFO: yearly finished in 0.87
+[2025-06-26T03:52:39.509Z] INFO: fs starting
+[2025-06-26T03:52:40.631Z] INFO: fs finished in 1.12
+[2025-06-26T03:55:23.800Z] INFO: accounts starting v2
+[2025-06-26T03:55:23.801Z] INFO: yearly starting
+[2025-06-26T03:55:24.657Z] INFO: yearly finished in 0.86
+[2025-06-26T03:55:24.658Z] INFO: fs starting
+[2025-06-26T03:55:29.291Z] INFO: fs finished in 4.63
+[2025-06-26T03:55:30.454Z] INFO: accounts finished in 6.65
+[2025-06-26T04:03:57.972Z] INFO: accounts starting v2
+[2025-06-26T04:03:57.975Z] INFO: yearly starting
+[2025-06-26T04:03:58.831Z] INFO: yearly finished in 0.85
+[2025-06-26T04:03:58.831Z] INFO: fs starting
+[2025-06-26T04:03:59.999Z] INFO: fs finished in 1.17
+[2025-06-26T04:04:00.959Z] INFO: accounts finished in 2.99
+[2025-06-26T04:07:46.090Z] INFO: accounts starting v2
+[2025-06-26T04:07:46.096Z] INFO: yearly starting
+[2025-06-26T04:07:46.941Z] INFO: yearly finished in 0.84
+[2025-06-26T04:07:46.941Z] INFO: fs starting
+[2025-06-26T04:07:48.101Z] INFO: fs finished in 1.16
+[2025-06-26T04:07:49.457Z] INFO: accounts finished in 3.37
+[2025-06-26T04:13:23.042Z] INFO: accounts starting v2
+[2025-06-26T04:13:23.043Z] INFO: accounts finished find files in 0.00
+[2025-06-26T04:13:23.051Z] INFO: yearly starting
+[2025-06-26T04:13:23.928Z] INFO: yearly finished in 0.88
+[2025-06-26T04:13:23.929Z] INFO: fs starting
+[2025-06-26T04:13:25.095Z] INFO: fs finished in 1.17
+[2025-06-26T04:13:26.538Z] INFO: accounts finished reading files in 3.49
+[2025-06-26T04:13:26.539Z] INFO: accounts finished write report in 0.00
+[2025-06-26T04:13:26.540Z] INFO: accounts finished in 3.50
+[2025-06-26T04:21:21.431Z] INFO: accounts starting v2
+[2025-06-26T04:21:21.432Z] INFO: accounts finished find files in 0.00
+[2025-06-26T04:21:21.437Z] INFO: yearly starting
+[2025-06-26T04:21:22.257Z] INFO: yearly finished in 0.82
+[2025-06-26T04:21:22.258Z] INFO: fs starting
+[2025-06-26T04:21:23.406Z] INFO: fs finished in 1.15
+[2025-06-26T04:21:29.193Z] INFO: accounts finished reading files in 7.76
+[2025-06-26T04:21:29.194Z] INFO: accounts finished write report in 0.00
+[2025-06-26T04:21:29.195Z] INFO: accounts finished in 7.76
+[2025-06-26T04:21:42.796Z] INFO: accounts starting v2
+[2025-06-26T04:21:42.796Z] INFO: accounts finished find files in 0.00
+[2025-06-26T04:21:42.799Z] INFO: yearly starting
+[2025-06-26T04:21:43.589Z] INFO: yearly finished in 0.79
+[2025-06-26T04:21:43.590Z] INFO: fs starting
+[2025-06-26T04:21:44.649Z] INFO: fs finished in 1.06
+[2025-06-26T04:21:50.877Z] INFO: accounts finished reading files in 8.08
+[2025-06-26T04:21:50.878Z] INFO: accounts finished write report in 0.00
+[2025-06-26T04:21:50.878Z] INFO: accounts finished in 8.08
+[2025-06-26T04:27:28.111Z] INFO: accounts starting v2
+[2025-06-26T04:27:28.112Z] INFO: accounts finished find files in 0.00
+[2025-06-26T04:27:34.594Z] INFO: accounts finished reading files in 6.48
+[2025-06-26T04:27:34.595Z] INFO: accounts finished write report in 0.00
+[2025-06-26T04:27:34.596Z] INFO: accounts finished in 6.48
+[2025-06-26T04:28:14.309Z] INFO: accounts starting
+[2025-06-26T04:28:15.464Z] INFO: accounts finished in 1.15
+[2025-06-26T04:29:25.010Z] INFO: accounts starting v2
+[2025-06-26T04:29:25.012Z] INFO: accounts finished find files in 0.00
+[2025-06-26T04:29:30.896Z] INFO: accounts finished reading files in 5.88
+[2025-06-26T04:29:30.897Z] INFO: accounts finished write report in 0.00
+[2025-06-26T04:29:30.897Z] INFO: accounts finished in 5.89
+[2025-06-26T04:30:25.626Z] INFO: accounts starting v2
+[2025-06-26T04:30:25.628Z] INFO: accounts finished find files in 0.00
+[2025-06-26T04:30:26.675Z] INFO: accounts finished reading files in 1.05
+[2025-06-26T04:30:26.676Z] INFO: accounts finished write report in 0.00
+[2025-06-26T04:30:26.676Z] INFO: accounts finished in 1.05
+[2025-06-26T04:30:35.711Z] INFO: accounts starting v2
+[2025-06-26T04:30:35.711Z] INFO: accounts finished find files in 0.00
+[2025-06-26T04:30:36.750Z] INFO: accounts finished reading files in 1.04
+[2025-06-26T04:30:36.751Z] INFO: accounts finished write report in 0.00
+[2025-06-26T04:30:36.752Z] INFO: accounts finished in 1.04
+[2025-06-26T04:30:40.552Z] INFO: accounts starting v2
+[2025-06-26T04:30:40.552Z] INFO: accounts finished find files in 0.00
+[2025-06-26T04:30:41.562Z] INFO: accounts finished reading files in 1.01
+[2025-06-26T04:30:41.563Z] INFO: accounts finished write report in 0.00
+[2025-06-26T04:30:41.563Z] INFO: accounts finished in 1.01
+[2025-06-26T04:33:23.971Z] INFO: accounts starting v2
+[2025-06-26T04:33:23.972Z] INFO: accounts finished find files in 0.00
+[2025-06-26T04:33:25.141Z] INFO: accounts finished reading files in 1.17
+[2025-06-26T04:33:25.142Z] INFO: accounts finished write report in 0.00
+[2025-06-26T04:33:25.142Z] INFO: accounts finished in 1.17
+[2025-06-26T04:36:13.896Z] INFO: accounts starting v2
+[2025-06-26T04:36:13.897Z] INFO: accounts finished find files in 0.00
+[2025-06-26T04:36:15.080Z] INFO: accounts finished reading files with parseSync in 1.18
+[2025-06-26T04:36:15.082Z] INFO: accounts finished write report in 0.00
+[2025-06-26T04:36:15.082Z] INFO: accounts finished in 1.18
+[2025-06-26T04:36:40.724Z] INFO: accounts starting v2
+[2025-06-26T04:36:40.725Z] INFO: accounts finished find files in 0.00
+[2025-06-26T04:36:41.803Z] INFO: accounts finished reading files with parseWithStream in 1.08
+[2025-06-26T04:36:41.804Z] INFO: accounts finished write report in 0.00
+[2025-06-26T04:36:41.805Z] INFO: accounts finished in 1.08
+[2025-06-26T04:37:05.421Z] INFO: accounts starting v2
+[2025-06-26T04:37:05.422Z] INFO: accounts finished find files in 0.00
+[2025-06-26T04:37:06.791Z] INFO: accounts finished reading files with parseWithReadLine in 1.37
+[2025-06-26T04:37:06.793Z] INFO: accounts finished write report in 0.00
+[2025-06-26T04:37:06.793Z] INFO: accounts finished in 1.37
+[2025-06-26T04:37:34.206Z] INFO: accounts starting v2
+[2025-06-26T04:37:34.207Z] INFO: accounts finished find files in 0.00
+[2025-06-26T04:37:40.094Z] INFO: accounts finished reading files with parseWithFastCSV in 5.89
+[2025-06-26T04:37:40.095Z] INFO: accounts finished write report in 0.00
+[2025-06-26T04:37:40.096Z] INFO: accounts finished in 5.89
+[2025-06-26T04:43:47.013Z] INFO: accounts starting v2
+[2025-06-26T04:43:47.015Z] INFO: accounts finished find files in 0.00
+[2025-06-26T04:43:48.020Z] INFO: accounts finished reading files with parseWithStream in 1.00
+[2025-06-26T04:43:48.021Z] INFO: accounts finished write report in 0.00
+[2025-06-26T04:43:48.021Z] INFO: accounts finished in 1.01
+[2025-06-26T04:43:56.826Z] INFO: accounts starting v2
+[2025-06-26T04:43:56.827Z] INFO: accounts finished find files in 0.00
+[2025-06-26T04:43:57.936Z] INFO: accounts finished reading files with parseWithStream in 1.11
+[2025-06-26T04:43:57.937Z] INFO: accounts finished write report in 0.00
+[2025-06-26T04:43:57.937Z] INFO: accounts finished in 1.11
+[2025-06-26T04:43:59.731Z] INFO: accounts starting v2
+[2025-06-26T04:43:59.731Z] INFO: accounts finished find files in 0.00
+[2025-06-26T04:44:00.696Z] INFO: accounts finished reading files with parseWithStream in 0.96
+[2025-06-26T04:44:00.696Z] INFO: accounts finished write report in 0.00
+[2025-06-26T04:44:00.697Z] INFO: accounts finished in 0.97
+[2025-06-26T04:44:02.276Z] INFO: accounts starting v2
+[2025-06-26T04:44:02.276Z] INFO: accounts finished find files in 0.00
+[2025-06-26T04:44:03.282Z] INFO: accounts finished reading files with parseWithStream in 1.00
+[2025-06-26T04:44:03.282Z] INFO: accounts finished write report in 0.00
+[2025-06-26T04:44:03.283Z] INFO: accounts finished in 1.01
+[2025-06-26T04:44:04.595Z] INFO: accounts starting v2
+[2025-06-26T04:44:04.595Z] INFO: accounts finished find files in 0.00
+[2025-06-26T04:44:05.561Z] INFO: accounts finished reading files with parseWithStream in 0.97
+[2025-06-26T04:44:05.562Z] INFO: accounts finished write report in 0.00
+[2025-06-26T04:44:05.562Z] INFO: accounts finished in 0.97
+[2025-06-26T05:55:18.980Z] INFO: accounts starting v2
+[2025-06-26T05:55:18.981Z] INFO: accounts finished find files in 0.00
+[2025-06-26T05:55:20.099Z] INFO: accounts finished reading files with parseWithRawStream in 1.12
+[2025-06-26T05:55:20.100Z] INFO: accounts finished write report in 0.00
+[2025-06-26T05:55:20.101Z] INFO: accounts finished in 1.12
+[2025-06-26T06:07:29.570Z] INFO: accounts starting v2
+[2025-06-26T06:07:29.572Z] INFO: accounts finished find files in 0.00
+[2025-06-26T06:07:30.611Z] INFO: accounts finished reading files with parseWithRawStream in 1.04
+[2025-06-26T06:07:30.612Z] INFO: accounts finished write report in 0.00
+[2025-06-26T06:07:30.612Z] INFO: accounts finished in 1.04
+[2025-06-26T06:09:03.804Z] INFO: accounts starting v2
+[2025-06-26T06:09:03.806Z] INFO: accounts finished find files in 0.00
+[2025-06-26T06:09:04.849Z] INFO: accounts finished reading files with parseWithRawStream in 1.04
+[2025-06-26T06:09:04.850Z] INFO: accounts finished write report in 0.00
+[2025-06-26T06:09:04.850Z] INFO: accounts finished in 1.04
+[2025-06-26T06:09:08.033Z] INFO: accounts starting v2
+[2025-06-26T06:09:08.034Z] INFO: accounts finished find files in 0.00
+[2025-06-26T06:09:08.973Z] INFO: accounts finished reading files with parseWithRawStream in 0.94
+[2025-06-26T06:09:08.974Z] INFO: accounts finished write report in 0.00
+[2025-06-26T06:09:08.974Z] INFO: accounts finished in 0.94
+[2025-06-26T06:09:11.509Z] INFO: accounts starting v2
+[2025-06-26T06:09:11.510Z] INFO: accounts finished find files in 0.00
+[2025-06-26T06:09:12.491Z] INFO: accounts finished reading files with parseWithRawStream in 0.98
+[2025-06-26T06:09:12.492Z] INFO: accounts finished write report in 0.00
+[2025-06-26T06:09:12.492Z] INFO: accounts finished in 0.98
+[2025-06-26T06:09:14.433Z] INFO: accounts starting v2
+[2025-06-26T06:09:14.434Z] INFO: accounts finished find files in 0.00
+[2025-06-26T06:09:15.360Z] INFO: accounts finished reading files with parseWithRawStream in 0.93
+[2025-06-26T06:09:15.361Z] INFO: accounts finished write report in 0.00
+[2025-06-26T06:09:15.361Z] INFO: accounts finished in 0.93
+[2025-06-26T06:09:16.903Z] INFO: accounts starting v2
+[2025-06-26T06:09:16.903Z] INFO: accounts finished find files in 0.00
+[2025-06-26T06:09:17.839Z] INFO: accounts finished reading files with parseWithRawStream in 0.93
+[2025-06-26T06:09:17.839Z] INFO: accounts finished write report in 0.00
+[2025-06-26T06:09:17.840Z] INFO: accounts finished in 0.94
+[2025-06-26T06:13:19.020Z] INFO: accounts starting v2
+[2025-06-26T06:13:19.021Z] INFO: accounts finished find files in 0.00
+[2025-06-26T06:13:19.024Z] INFO: accounts finished reading files with parseWithRawStream in 0.00
+[2025-06-26T06:13:19.025Z] INFO: accounts finished write report in 0.00
+[2025-06-26T06:13:19.025Z] INFO: accounts finished in 0.00
+[2025-06-26T06:13:58.000Z] INFO: accounts starting v2
+[2025-06-26T06:13:58.002Z] INFO: accounts finished find files in 0.00
+[2025-06-26T06:13:58.966Z] INFO: accounts finished reading files with parseWithRawStream in 0.96
+[2025-06-26T06:13:58.970Z] INFO: accounts finished write report in 0.00
+[2025-06-26T06:13:58.970Z] INFO: accounts finished in 0.97
+[2025-06-26T06:14:08.892Z] INFO: accounts starting v2
+[2025-06-26T06:14:08.893Z] INFO: accounts finished find files in 0.00
+[2025-06-26T06:14:09.876Z] INFO: accounts finished reading files with parseWithRawStream in 0.98
+[2025-06-26T06:14:09.877Z] INFO: accounts finished write report in 0.00
+[2025-06-26T06:14:09.877Z] INFO: accounts finished in 0.98
+[2025-06-26T06:14:11.891Z] INFO: accounts starting v2
+[2025-06-26T06:14:11.892Z] INFO: accounts finished find files in 0.00
+[2025-06-26T06:14:12.831Z] INFO: accounts finished reading files with parseWithRawStream in 0.94
+[2025-06-26T06:14:12.832Z] INFO: accounts finished write report in 0.00
+[2025-06-26T06:14:12.832Z] INFO: accounts finished in 0.94
+[2025-06-26T06:14:14.039Z] INFO: accounts starting v2
+[2025-06-26T06:14:14.039Z] INFO: accounts finished find files in 0.00
+[2025-06-26T06:14:14.967Z] INFO: accounts finished reading files with parseWithRawStream in 0.93
+[2025-06-26T06:14:14.968Z] INFO: accounts finished write report in 0.00
+[2025-06-26T06:14:14.968Z] INFO: accounts finished in 0.93
+[2025-06-26T06:14:15.967Z] INFO: accounts starting v2
+[2025-06-26T06:14:15.967Z] INFO: accounts finished find files in 0.00
+[2025-06-26T06:14:16.873Z] INFO: accounts finished reading files with parseWithRawStream in 0.91
+[2025-06-26T06:14:16.874Z] INFO: accounts finished write report in 0.00
+[2025-06-26T06:14:16.875Z] INFO: accounts finished in 0.91
+[2025-06-26T06:14:18.249Z] INFO: accounts starting v2
+[2025-06-26T06:14:18.249Z] INFO: accounts finished find files in 0.00
+[2025-06-26T06:14:19.179Z] INFO: accounts finished reading files with parseWithRawStream in 0.93
+[2025-06-26T06:14:19.180Z] INFO: accounts finished write report in 0.00
+[2025-06-26T06:14:19.180Z] INFO: accounts finished in 0.93
+[2025-06-26T06:14:20.431Z] INFO: accounts starting v2
+[2025-06-26T06:14:20.432Z] INFO: accounts finished find files in 0.00
+[2025-06-26T06:14:21.338Z] INFO: accounts finished reading files with parseWithRawStream in 0.91
+[2025-06-26T06:14:21.339Z] INFO: accounts finished write report in 0.00
+[2025-06-26T06:14:21.339Z] INFO: accounts finished in 0.91
+[2025-06-26T09:40:53.599Z] INFO: accounts starting
+[2025-06-26T09:40:53.600Z] INFO: accounts finished find files in 0.00
+[2025-06-26T09:40:53.602Z] INFO: yearly starting
+[2025-06-26T09:40:53.603Z] INFO: yearly finished find files in 0.00
+[2025-06-26T09:40:53.605Z] INFO: fs starting
+[2025-06-26T09:40:53.606Z] INFO: fs finished find files in 0.00
+[2025-06-26T09:40:56.231Z] INFO: accounts finished reading files in 2.63
+[2025-06-26T09:40:56.233Z] INFO: accounts finished write report in 0.00
+[2025-06-26T09:40:56.233Z] INFO: accounts finished in 2.63
+[2025-06-26T09:40:56.234Z] INFO: yearly finished reading files in 2.63
+[2025-06-26T09:40:56.234Z] INFO: accounts finished write report in 0.00
+[2025-06-26T09:40:56.234Z] INFO: accounts finished in 2.63
+[2025-06-26T09:40:56.235Z] INFO: fs finished reading files in 2.63
+[2025-06-26T09:40:56.236Z] INFO: accounts finished write report in 0.00
+[2025-06-26T09:40:56.236Z] INFO: accounts finished in 2.63
+[2025-06-26T09:42:28.479Z] INFO: accounts starting
+[2025-06-26T09:42:28.480Z] INFO: accounts finished find files in 0.00
+[2025-06-26T09:42:28.483Z] INFO: yearly starting
+[2025-06-26T09:42:28.484Z] INFO: yearly finished find files in 0.00
+[2025-06-26T09:42:28.486Z] INFO: fs starting
+[2025-06-26T09:42:28.488Z] INFO: fs finished find files in 0.00
+[2025-06-26T09:42:31.114Z] INFO: accounts finished reading files in 2.63
+[2025-06-26T09:42:31.115Z] INFO: accounts finished write report in 0.00
+[2025-06-26T09:42:31.115Z] INFO: accounts finished in 2.64
+[2025-06-26T09:42:31.116Z] INFO: yearly finished reading files in 2.63
+[2025-06-26T09:42:31.117Z] INFO: yearly finished write report in 0.00
+[2025-06-26T09:42:31.117Z] INFO: yearly finished in 2.63
+[2025-06-26T09:42:31.118Z] INFO: fs finished reading files in 2.63
+[2025-06-26T09:42:31.118Z] INFO: fs finished write report in 0.00
+[2025-06-26T09:42:31.118Z] INFO: fs finished in 2.63
+[2025-06-26T09:43:03.635Z] INFO: accounts starting
+[2025-06-26T09:43:03.636Z] INFO: accounts finished find files in 0.00
+[2025-06-26T09:43:04.595Z] INFO: accounts finished reading files in 0.96
+[2025-06-26T09:43:04.596Z] INFO: accounts finished write report in 0.00
+[2025-06-26T09:43:04.596Z] INFO: accounts finished in 0.96
+[2025-06-26T09:43:26.820Z] INFO: yearly starting
+[2025-06-26T09:43:26.821Z] INFO: yearly finished find files in 0.00
+[2025-06-26T09:43:27.533Z] INFO: yearly finished reading files in 0.71
+[2025-06-26T09:43:27.534Z] INFO: yearly finished write report in 0.00
+[2025-06-26T09:43:27.534Z] INFO: yearly finished in 0.71
+[2025-06-26T09:43:41.554Z] INFO: fs starting
+[2025-06-26T09:43:41.555Z] INFO: fs finished find files in 0.00
+[2025-06-26T09:43:42.583Z] INFO: fs finished reading files in 1.03
+[2025-06-26T09:43:42.584Z] INFO: fs finished write report in 0.00
+[2025-06-26T09:43:42.584Z] INFO: fs finished in 1.03
+[2025-06-26T09:43:57.722Z] INFO: accounts starting
+[2025-06-26T09:43:57.723Z] INFO: accounts finished find files in 0.00
+[2025-06-26T09:43:57.725Z] INFO: yearly starting
+[2025-06-26T09:43:57.726Z] INFO: yearly finished find files in 0.00
+[2025-06-26T09:43:57.728Z] INFO: fs starting
+[2025-06-26T09:43:57.729Z] INFO: fs finished find files in 0.00
+[2025-06-26T09:44:00.274Z] INFO: accounts finished reading files in 2.55
+[2025-06-26T09:44:00.275Z] INFO: accounts finished write report in 0.00
+[2025-06-26T09:44:00.275Z] INFO: accounts finished in 2.55
+[2025-06-26T09:44:00.276Z] INFO: yearly finished reading files in 2.55
+[2025-06-26T09:44:00.277Z] INFO: yearly finished write report in 0.00
+[2025-06-26T09:44:00.277Z] INFO: yearly finished in 2.55
+[2025-06-26T09:44:00.277Z] INFO: fs finished reading files in 2.55
+[2025-06-26T09:44:00.278Z] INFO: fs finished write report in 0.00
+[2025-06-26T09:44:00.278Z] INFO: fs finished in 2.55
+[2025-06-26T09:45:49.438Z] INFO: accounts starting
+[2025-06-26T09:45:49.439Z] INFO: accounts finished find files in 0.00
+[2025-06-26T09:45:49.442Z] INFO: yearly starting
+[2025-06-26T09:45:49.443Z] INFO: yearly finished find files in 0.00
+[2025-06-26T09:45:49.444Z] INFO: fs starting
+[2025-06-26T09:45:49.445Z] INFO: fs finished find files in 0.00
+[2025-06-26T09:45:51.984Z] INFO: accounts finished reading files in 2.54
+[2025-06-26T09:50:48.221Z] INFO: accounts starting
+[2025-06-26T09:50:49.401Z] INFO: accounts finished in 1.18
+[2025-06-26T09:50:49.402Z] INFO: yearly starting
+[2025-06-26T09:50:50.231Z] INFO: yearly finished in 0.83
+[2025-06-26T09:50:50.232Z] INFO: fs starting
+[2025-06-26T09:50:51.375Z] INFO: fs finished in 1.14
+[2025-06-26T09:54:08.473Z] INFO: accounts starting
+[2025-06-26T09:54:08.475Z] INFO: accounts finished find files in 0.00
+[2025-06-26T09:54:08.478Z] INFO: yearly starting
+[2025-06-26T09:54:08.478Z] INFO: yearly finished find files in 0.00
+[2025-06-26T09:54:08.480Z] INFO: fs starting
+[2025-06-26T09:54:08.481Z] INFO: fs finished find files in 0.00
+[2025-06-26T09:54:11.110Z] INFO: accounts finished reading files in 2.63
+[2025-06-26T09:55:06.474Z] INFO: accounts starting
+[2025-06-26T09:55:06.475Z] INFO: accounts finished find files in 0.00
+[2025-06-26T09:55:06.477Z] INFO: yearly starting
+[2025-06-26T09:55:06.478Z] INFO: yearly finished find files in 0.00
+[2025-06-26T09:55:06.480Z] INFO: fs starting
+[2025-06-26T09:55:06.481Z] INFO: fs finished find files in 0.00
+[2025-06-26T09:55:09.091Z] INFO: accounts finished reading files in 2.61
+[2025-06-26T09:55:09.092Z] INFO: accounts} finished write report in 0.00
+[2025-06-26T09:55:09.092Z] INFO: accounts finished in 2.62
+[2025-06-26T09:55:09.093Z] INFO: yearly finished reading files in 2.61
+[2025-06-26T09:55:09.094Z] INFO: yearly} finished write report in 0.00
+[2025-06-26T09:55:09.094Z] INFO: yearly finished in 2.62
+[2025-06-26T09:55:09.095Z] INFO: fs finished reading files in 2.61
+[2025-06-26T09:55:09.096Z] INFO: fs} finished write report in 0.00
+[2025-06-26T09:55:09.096Z] INFO: fs finished in 2.62
+[2025-06-26T09:55:55.642Z] INFO: accounts starting
+[2025-06-26T09:55:55.644Z] INFO: accounts finished find files in 0.00
+[2025-06-26T09:55:55.646Z] INFO: yearly starting
+[2025-06-26T09:55:55.647Z] INFO: yearly finished find files in 0.00
+[2025-06-26T09:55:55.648Z] INFO: fs starting
+[2025-06-26T09:55:55.649Z] INFO: fs finished find files in 0.00
+[2025-06-26T09:55:58.216Z] INFO: accounts finished reading files in 2.57
+[2025-06-26T09:55:58.217Z] INFO: accounts finished write report in 0.00
+[2025-06-26T09:55:58.217Z] INFO: accounts finished in 2.57
+[2025-06-26T09:55:58.218Z] INFO: yearly finished reading files in 2.57
+[2025-06-26T09:55:58.218Z] INFO: yearly finished write report in 0.00
+[2025-06-26T09:55:58.218Z] INFO: yearly finished in 2.57
+[2025-06-26T09:55:58.219Z] INFO: fs finished reading files in 2.57
+[2025-06-26T09:55:58.220Z] INFO: fs finished write report in 0.00
+[2025-06-26T09:55:58.220Z] INFO: fs finished in 2.57
+[2025-06-26T09:57:31.497Z] INFO: accounts starting
+[2025-06-26T09:57:31.498Z] INFO: accounts finished find files in 0.00
+[2025-06-26T09:57:31.501Z] INFO: yearly starting
+[2025-06-26T09:57:31.502Z] INFO: yearly finished find files in 0.00
+[2025-06-26T09:57:31.503Z] INFO: fs starting
+[2025-06-26T09:57:31.504Z] INFO: fs finished find files in 0.00
+[2025-06-26T09:57:34.052Z] INFO: accounts finished reading files in 2.55
+[2025-06-26T09:57:34.053Z] INFO: accounts finished write report in 0.00
+[2025-06-26T09:57:34.053Z] INFO: accounts finished in 2.56
+[2025-06-26T09:57:34.054Z] INFO: yearly finished reading files in 2.55
+[2025-06-26T09:57:34.055Z] INFO: yearly finished write report in 0.00
+[2025-06-26T09:57:34.055Z] INFO: yearly finished in 2.55
+[2025-06-26T09:57:34.056Z] INFO: fs finished reading files in 2.55
+[2025-06-26T09:57:34.056Z] INFO: fs finished write report in 0.00
+[2025-06-26T09:57:34.057Z] INFO: fs finished in 2.55
+[2025-06-26T10:01:23.571Z] INFO: accounts starting
+[2025-06-26T10:01:23.573Z] INFO: accounts finished find files in 0.00
+[2025-06-26T10:01:23.574Z] INFO: yearly starting
+[2025-06-26T10:01:23.575Z] INFO: yearly finished find files in 0.00
+[2025-06-26T10:01:23.576Z] INFO: fs starting
+[2025-06-26T10:01:23.576Z] INFO: fs finished find files in 0.00
+[2025-06-26T10:01:26.121Z] INFO: accounts finished reading files in 2.55
+[2025-06-26T10:01:26.122Z] INFO: accounts finished write report in 0.00
+[2025-06-26T10:01:26.122Z] INFO: accounts finished in 2.55
+[2025-06-26T10:01:26.123Z] INFO: yearly finished reading files in 2.55
+[2025-06-26T10:01:26.124Z] INFO: yearly finished write report in 0.00
+[2025-06-26T10:01:26.124Z] INFO: yearly finished in 2.55
+[2025-06-26T10:01:26.125Z] INFO: fs finished reading files in 2.55
+[2025-06-26T10:01:26.125Z] INFO: fs finished write report in 0.00
+[2025-06-26T10:01:26.126Z] INFO: fs finished in 2.55
+[2025-06-26T10:02:35.894Z] INFO: accounts starting
+[2025-06-26T10:02:35.896Z] INFO: accounts finished find files in 0.00
+[2025-06-26T10:02:35.897Z] INFO: yearly starting
+[2025-06-26T10:02:35.898Z] INFO: yearly finished find files in 0.00
+[2025-06-26T10:02:35.899Z] INFO: fs starting
+[2025-06-26T10:02:35.900Z] INFO: fs finished find files in 0.00
+[2025-06-26T10:02:38.546Z] INFO: accounts finished reading files in 2.65
+[2025-06-26T10:02:38.547Z] INFO: accounts finished write report in 0.00
+[2025-06-26T10:02:38.547Z] INFO: accounts finished in 2.65
+[2025-06-26T10:02:38.550Z] INFO: yearly finished reading files in 2.65
+[2025-06-26T10:02:38.550Z] INFO: yearly finished write report in 0.00
+[2025-06-26T10:02:38.550Z] INFO: yearly finished in 2.65
+[2025-06-26T10:02:38.551Z] INFO: fs finished reading files in 2.65
+[2025-06-26T10:02:38.552Z] INFO: fs finished write report in 0.00
+[2025-06-26T10:02:38.552Z] INFO: fs finished in 2.65
+[2025-06-26T10:18:14.256Z] INFO: accounts starting
+[2025-06-26T10:18:14.258Z] INFO: accounts finished find files in 0.00
+[2025-06-26T10:18:15.231Z] INFO: accounts finished reading files in 0.97
+[2025-06-26T10:18:15.232Z] INFO: accounts finished write report in 0.00
+[2025-06-26T10:18:15.232Z] INFO: accounts finished in 0.97
+[2025-06-26T10:18:15.233Z] INFO: yearly starting
+[2025-06-26T10:18:15.233Z] INFO: yearly finished find files in 0.00
+[2025-06-26T10:18:15.908Z] INFO: yearly finished reading files in 0.68
+[2025-06-26T10:18:15.910Z] INFO: yearly finished write report in 0.00
+[2025-06-26T10:18:15.910Z] INFO: yearly finished in 0.68
+[2025-06-26T10:18:15.910Z] INFO: fs starting
+[2025-06-26T10:18:15.911Z] INFO: fs finished find files in 0.00
+[2025-06-26T10:18:16.895Z] INFO: fs finished reading files in 0.98
+[2025-06-26T10:18:16.896Z] INFO: fs finished write report in 0.00
+[2025-06-26T10:18:16.896Z] INFO: fs finished in 0.99
+[2025-06-26T10:25:56.059Z] INFO: accounts starting
+[2025-06-26T10:25:56.061Z] INFO: accounts finished find files in 0.00
+[2025-06-26T10:25:57.045Z] INFO: accounts finished reading files in 0.98
+[2025-06-26T10:25:57.046Z] INFO: accounts finished write report in 0.00
+[2025-06-26T10:25:57.046Z] INFO: accounts finished in 0.99
+[2025-06-26T10:25:57.047Z] INFO: yearly starting
+[2025-06-26T10:25:57.047Z] INFO: yearly finished find files in 0.00
+[2025-06-26T10:25:57.691Z] INFO: yearly finished reading files in 0.64
+[2025-06-26T10:25:57.692Z] INFO: yearly finished write report in 0.00
+[2025-06-26T10:25:57.693Z] INFO: yearly finished in 0.65
+[2025-06-26T10:25:57.693Z] INFO: fs starting
+[2025-06-26T10:25:57.694Z] INFO: fs finished find files in 0.00
+[2025-06-26T10:25:58.671Z] INFO: fs finished reading files in 0.98
+[2025-06-26T10:25:58.672Z] INFO: fs finished write report in 0.00
+[2025-06-26T10:25:58.672Z] INFO: fs finished in 0.98
+[2025-06-29T17:52:53.486Z] INFO: accounts starting
+[2025-06-29T17:52:53.487Z] INFO: accounts finished find files in 0.00
+[2025-06-29T17:52:54.512Z] INFO: accounts finished reading files in 1.02
+[2025-06-29T17:52:54.513Z] INFO: accounts finished write report in 0.00
+[2025-06-29T17:52:54.514Z] INFO: accounts finished in 1.03
+[2025-06-29T17:52:54.514Z] INFO: yearly starting
+[2025-06-29T17:52:54.515Z] INFO: yearly finished find files in 0.00
+[2025-06-29T17:52:55.215Z] INFO: yearly finished reading files in 0.70
+[2025-06-29T17:52:55.216Z] INFO: yearly finished write report in 0.00
+[2025-06-29T17:52:55.216Z] INFO: yearly finished in 0.70
+[2025-06-29T17:52:55.217Z] INFO: fs starting
+[2025-06-29T17:52:55.217Z] INFO: fs finished find files in 0.00
+[2025-06-29T17:52:56.179Z] INFO: fs finished reading files in 0.96
+[2025-06-29T17:52:56.180Z] INFO: fs finished write report in 0.00
+[2025-06-29T17:52:56.180Z] INFO: fs finished in 0.96
+[2025-06-29T17:56:11.252Z] INFO: accounts starting
+[2025-06-29T17:56:11.254Z] INFO: accounts finished find files in 0.00
+[2025-06-29T17:56:12.245Z] INFO: accounts finished reading files in 0.99
+[2025-06-29T17:56:12.247Z] INFO: accounts finished write report in 0.00
+[2025-06-29T17:56:12.247Z] INFO: accounts finished in 0.99
+[2025-06-29T17:56:12.248Z] INFO: yearly starting
+[2025-06-29T17:56:12.248Z] INFO: yearly finished find files in 0.00
+[2025-06-29T17:56:12.920Z] INFO: yearly finished reading files in 0.67
+[2025-06-29T17:56:12.921Z] INFO: yearly finished write report in 0.00
+[2025-06-29T17:56:12.921Z] INFO: yearly finished in 0.67
+[2025-06-29T17:56:12.921Z] INFO: fs starting
+[2025-06-29T17:56:12.922Z] INFO: fs finished find files in 0.00
+[2025-06-29T17:56:13.902Z] INFO: fs finished reading files in 0.98
+[2025-06-29T17:56:13.903Z] INFO: fs finished write report in 0.00
+[2025-06-29T17:56:13.903Z] INFO: fs finished in 0.98
+[2025-06-29T17:57:36.828Z] INFO: accounts starting
+[2025-06-29T17:57:36.830Z] INFO: accounts finished find files in 0.00
+[2025-06-29T17:57:37.874Z] INFO: accounts finished reading files in 1.04
+[2025-06-29T17:57:37.875Z] INFO: accounts finished write report in 0.00
+[2025-06-29T17:57:37.875Z] INFO: accounts finished in 1.05
+[2025-06-29T17:57:37.876Z] INFO: yearly starting
+[2025-06-29T17:57:37.876Z] INFO: yearly finished find files in 0.00
+[2025-06-29T17:57:38.563Z] INFO: yearly finished reading files in 0.69
+[2025-06-29T17:57:38.564Z] INFO: yearly finished write report in 0.00
+[2025-06-29T17:57:38.564Z] INFO: yearly finished in 0.69
+[2025-06-29T17:57:38.565Z] INFO: fs starting
+[2025-06-29T17:57:38.565Z] INFO: fs finished find files in 0.00
+[2025-06-29T17:57:39.521Z] INFO: fs finished reading files in 0.96
+[2025-06-29T17:57:39.522Z] INFO: fs finished write report in 0.00
+[2025-06-29T17:57:39.522Z] INFO: fs finished in 0.96
